@@ -1,0 +1,8 @@
+server:
+  port: 6238
+  servlet:
+    context-path: /api
+yunapi:
+  client:
+    access-key: thefang
+    secret-key: lishushu
