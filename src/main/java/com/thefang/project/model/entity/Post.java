@@ -14,6 +14,7 @@ import java.util.Date;
 @TableName(value = "post")
 @Data
 public class Post implements Serializable {
+
     /**
      * id
      */

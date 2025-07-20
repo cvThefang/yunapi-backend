@@ -1,5 +1,6 @@
 package com.thefang.yunapiinterface.controller;
 
+import cn.hutool.json.JSON;
 import com.thefang.yunapiclientsdk.model.User;
 import com.thefang.yunapiclientsdk.utils.SignUtils;
 import org.springframework.web.bind.annotation.*;
@@ -60,8 +61,10 @@ public class NameController {
         if (!serverSign.equals(sign)) {
             throw new RuntimeException("无权限");
         }
-        System.out.println(serverSign);
-        System.out.println(sign);
-        return "JSON Hello, " + user.getUserName();
+        String result =  " JSON Hello, " + user.getUserName();
+        // 调用成功后 调用次数加1 扣减用户的剩余调用次数
+
+
+        return result;
     }
 }

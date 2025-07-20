@@ -13,6 +13,7 @@ import java.util.Date;
 @TableName(value ="interface_info")
 @Data
 public class InterfaceInfo implements Serializable {
+
     /**
      * 主键
      */
