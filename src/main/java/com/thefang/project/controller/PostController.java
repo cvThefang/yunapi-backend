@@ -10,14 +10,12 @@ import com.thefang.project.common.ResultUtils;
 import com.thefang.project.constant.CommonConstant;
 import com.thefang.project.exception.BusinessException;
 import com.thefang.project.model.dto.post.PostAddRequest;
-import com.thefang.project.model.dto.post.PostDoThumbRequest;
 import com.thefang.project.model.dto.post.PostQueryRequest;
 import com.thefang.project.model.dto.post.PostUpdateRequest;
 import com.thefang.project.model.entity.Post;
-import com.thefang.project.model.entity.User;
-import com.thefang.project.model.vo.PostVO;
 import com.thefang.project.service.PostService;
 import com.thefang.project.service.UserService;
+import com.thefang.yunapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -25,11 +23,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.*;
-import java.util.stream.Collectors;
 
 /**
  * 帖子接口

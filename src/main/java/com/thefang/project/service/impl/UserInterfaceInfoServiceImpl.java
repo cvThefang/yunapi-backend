@@ -1,13 +1,16 @@
 package com.thefang.project.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.thefang.project.common.ErrorCode;
 import com.thefang.project.exception.BusinessException;
 import com.thefang.project.mapper.UserInterfaceInfoMapper;
-import com.thefang.project.model.entity.UserInterfaceInfo;
 import com.thefang.project.service.UserInterfaceInfoService;
+import com.thefang.yunapicommon.model.entity.UserInterfaceInfo;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author Thefang
@@ -17,6 +20,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserInterfaceInfoServiceImpl extends ServiceImpl<UserInterfaceInfoMapper, UserInterfaceInfo>
         implements UserInterfaceInfoService {
+
+    @Resource
+    private UserInterfaceInfoMapper userInterfaceInfoMapper;
 
     @Override
     public void validUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo, boolean add) {
@@ -46,6 +52,20 @@ public class UserInterfaceInfoServiceImpl extends ServiceImpl<UserInterfaceInfoM
         // todo 优化： 这里应该加锁，防止并发时数据不一致
         updateWrapper.setSql("leftNum = leftNum - 1 , totalNum = totalNum + 1");
         return this.update(updateWrapper);
+    }
+
+    @Override
+    public int getLeftNum(long interfaceInfoId, long userId) {
+        // 构建查询条件
+        QueryWrapper<UserInterfaceInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("interfaceInfoId", interfaceInfoId);
+        queryWrapper.eq("userId", userId);
+        // 查询接口信息
+        UserInterfaceInfo userInterfaceInfo = userInterfaceInfoMapper.selectOne(queryWrapper);
+        if (userInterfaceInfo == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        return userInterfaceInfo.getLeftNum();
     }
 }
 

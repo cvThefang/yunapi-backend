@@ -1,7 +1,7 @@
 package com.thefang.project.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.thefang.project.model.entity.UserInterfaceInfo;
+import com.thefang.yunapicommon.model.entity.UserInterfaceInfo;
 
 /**
  * @author Thefang
@@ -26,5 +26,14 @@ public interface UserInterfaceInfoService extends IService<UserInterfaceInfo> {
      * @return
      */
     boolean invokeCount(long interfaceInfoId, long userId);
+
+    /**
+     * 查询剩余调用次数
+     *
+     * @param interfaceInfoId 接口ID
+     * @param userId          用户ID
+     * @return
+     */
+    int getLeftNum(long interfaceInfoId, long userId);
 
 }

@@ -4,8 +4,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.thefang.project.common.ErrorCode;
 import com.thefang.project.exception.BusinessException;
 import com.thefang.project.mapper.InterfaceInfoMapper;
-import com.thefang.project.model.entity.InterfaceInfo;
 import com.thefang.project.service.InterfaceInfoService;
+import com.thefang.yunapicommon.model.entity.InterfaceInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 

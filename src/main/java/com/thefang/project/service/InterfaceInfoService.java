@@ -1,7 +1,7 @@
 package com.thefang.project.service;
 
-import com.thefang.project.model.entity.InterfaceInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.thefang.yunapicommon.model.entity.InterfaceInfo;
 
 /**
  * @author Thefang

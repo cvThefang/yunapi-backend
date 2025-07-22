@@ -1,4 +1,4 @@
-package com.thefang.project.model.entity;
+package com.thefang.yunapicommon.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

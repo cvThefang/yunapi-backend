@@ -1,7 +1,7 @@
 package com.thefang.project.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.thefang.project.model.entity.User;
+import com.thefang.yunapicommon.model.entity.User;
 
 /**
  * @Entity com.thefang.project.model.domain.User

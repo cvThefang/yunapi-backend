@@ -2,7 +2,7 @@ package com.thefang.project.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.thefang.project.model.entity.User;
+import com.thefang.yunapicommon.model.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
 
